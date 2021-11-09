@@ -1,0 +1,5 @@
+<button (click)="enableDisable()" >{{ enableDisableButtonLabel }}</button>
+
+<button (click)="sayMessage()" [disabled]="!canClick">Trigger alert message</button>
+
+<p [style.color]="fontColor">{{ counterValue }}</p>
