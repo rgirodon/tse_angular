@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
@@ -7,6 +8,7 @@ import { TemplateDemoComponent } from './template-demo/template-demo.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductComponent } from './product/product.component';
 import { CounterComponent } from './counter/counter.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,12 @@ import { CounterComponent } from './counter/counter.component';
     TemplateDemoComponent,
     ProductsListComponent,
     ProductComponent,
-    CounterComponent
+    CounterComponent,
+    FormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
