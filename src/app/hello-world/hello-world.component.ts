@@ -9,7 +9,7 @@ export class HelloWorldComponent implements OnInit {
 
   message1: string = 'This is my first NG component at TSE !';
 
-  message2: string = 'This is so good !';
+  message2: string = 'This is really good !';
 
   constructor() { }
 
