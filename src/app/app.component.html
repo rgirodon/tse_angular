@@ -1,10 +1,12 @@
-<hello-world></hello-world>
+<h1>Angular Router App</h1>
 
-<counter></counter>
+<!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+<nav>
+  <ul>
+    <li><a routerLink="/counter" routerLinkActive="active">Counter</a></li>
+    <li><a routerLink="/favorite-color-form" routerLinkActive="active">Favorite Color</a></li>
+  </ul>
+</nav>
 
-<products-list></products-list>
-
-<favorite-color-form></favorite-color-form>
-<!--
-<template-demo></template-demo>
--->
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>
