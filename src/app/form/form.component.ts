@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoggerService } from '../logger.service';
 
 @Component({
-  selector: 'favorite-color-form',
+  selector: 'subscription-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
