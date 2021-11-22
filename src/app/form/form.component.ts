@@ -8,7 +8,11 @@ import { LoggerService } from '../logger.service';
 })
 export class FormComponent implements OnInit {
 
-  favoriteColor: string = '';
+  login: string = '';
+
+  password: string = '';
+
+  confirm_password: string = '';
 
   constructor(private logger: LoggerService) { }
 
@@ -17,10 +21,17 @@ export class FormComponent implements OnInit {
 
   validate(): void {
     
-    this.logger.log('Favorite color : ' + this.favoriteColor);
+    this.logger.log('Login : ' + this.login);
 
-    this.favoriteColor = '';
+    this.logger.log('Password : ' + this.password);
 
-    this.logger.log('Favorite color reset');
+    this.logger.log('Confirm password : ' + this.confirm_password);
+
+    if (this.password == this.confirm_password) {
+      this.logger.log('Passwords identical');
+    }
+    else {
+      this.logger.log('Passwords not identical');
+    }
   }
 }
