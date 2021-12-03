@@ -1,4 +1,4 @@
 <p>Config : </p>
-<p>{{ config?.api_url }}</p>
-<p>{{ config?.text_file }}</p>
-<p>{{ config?.date }}</p>
+<p>{{ (config | async)?.api_url }}</p>
+<p>{{ (config | async)?.text_file }}</p>
+<p>{{ (config | async)?.date }}</p>
