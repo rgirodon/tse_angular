@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfigService } from '../config.service';
 import { Config } from '../config';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-config',
@@ -9,7 +10,7 @@ import { Config } from '../config';
 })
 export class ConfigComponent implements OnInit {
 
-  config: Config | undefined;
+  config: Observable<Config> | undefined;
 
   constructor(private configService: ConfigService) { }
 
@@ -19,12 +20,7 @@ export class ConfigComponent implements OnInit {
   }
 
   showConfig() {
-    this.configService.getConfig().subscribe(
-      (data: Config) => this.config = {
-          api_url: data.api_url,
-          text_file:  data.text_file,
-          date: data.date,
-      });
+    this.config = this.configService.getConfig();
   }
 
 }
