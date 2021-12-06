@@ -21,10 +21,7 @@ export class ConfigService {
   loadConfig() {
     
     this.http.get<Config>(this.configUrl).subscribe(
-      
-     data => {
-       this.config.next(data);
-     }
+      this.config
     );
   }
 }
