@@ -16,12 +16,12 @@ export class ConfigComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.config = this.configService.config;
+
     this.showConfig();
   }
 
   showConfig() {
-
-    this.config = this.configService.config;
 
     this.configService.loadConfig();
   }
