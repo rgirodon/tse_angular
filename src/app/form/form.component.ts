@@ -8,6 +8,10 @@ import { LoggerService } from '../logger.service';
 })
 export class FormComponent implements OnInit {
 
+  hasError: boolean = false;
+
+  isValid: boolean = false;
+
   login: string = '';
 
   password: string = '';
@@ -29,9 +33,17 @@ export class FormComponent implements OnInit {
 
     if (this.password == this.confirm_password) {
       this.logger.log('Passwords identical');
+
+      this.hasError = false;
+
+      this.isValid = true;
     }
     else {
       this.logger.log('Passwords not identical');
+
+      this.hasError = true;
+
+      this.isValid = false;
     }
   }
 }
