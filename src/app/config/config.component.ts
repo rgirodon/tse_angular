@@ -19,7 +19,7 @@ export class ConfigComponent implements OnInit {
     this.showConfig();
   }
 
-  showConfig() {
+  showConfig(): void {
     this.config = this.configService.getConfig();
   }
 
