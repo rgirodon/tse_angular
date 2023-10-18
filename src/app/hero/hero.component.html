@@ -1,4 +1,4 @@
 <p>Hero : </p>
-<p>{{ hero?.name }}</p>
-<p>{{ hero?.real_name }}</p>
-<p>{{ hero?.birth_date }}</p>
+<p>{{ (hero | async)?.name }}</p>
+<p>{{ (hero | async)?.real_name }}</p>
+<p>{{ (hero | async)?.birth_date }}</p>

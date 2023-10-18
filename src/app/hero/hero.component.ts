@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroService } from '../hero.service';
 import { Hero } from '../hero';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-hero',
@@ -9,7 +10,7 @@ import { Hero } from '../hero';
 })
 export class HeroComponent implements OnInit {
 
-  hero: Hero | undefined;
+  hero: Observable<Hero> | undefined;
 
   constructor(private heroService: HeroService) { }
 
@@ -19,12 +20,7 @@ export class HeroComponent implements OnInit {
   }
 
   showHero() {
-    this.heroService.getHero().subscribe(
-      (data: Hero) => this.hero = {
-          name: data.name,
-          real_name:  data.real_name,
-          birth_date: data.birth_date,
-      });
+    this.hero = this.heroService.getHero();
   }
 
 }
