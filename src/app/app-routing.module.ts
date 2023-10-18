@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CounterComponent } from './counter/counter.component';
 import { FormComponent } from './form/form.component';
-import { ConfigComponent } from './config/config.component';
+import { HeroComponent } from './hero/hero.component';
 
 const routes: Routes = [
   { path: 'counter', component: CounterComponent },
   { path: 'favorite-color-form', component: FormComponent },
-  { path: 'config', component: ConfigComponent },
+  { path: 'hero', component: HeroComponent },
 ];
 
 @NgModule({

@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Config } from './config';
+import { Hero } from './hero';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ConfigService {
+export class HeroService {
 
-  configUrl = 'assets/config.json';
+  apiUrl = 'assets/hero.json';
 
   constructor(private http: HttpClient) { }
 
-  getConfig() {
-    return this.http.get<Config>(this.configUrl);
+  getHero() {
+    return this.http.get<Hero>(this.apiUrl);
   }
 }

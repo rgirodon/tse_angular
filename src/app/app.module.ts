@@ -11,7 +11,7 @@ import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductComponent } from './product/product.component';
 import { CounterComponent } from './counter/counter.component';
 import { FormComponent } from './form/form.component';
-import { ConfigComponent } from './config/config.component';
+import { HeroComponent } from './hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { ConfigComponent } from './config/config.component';
     ProductComponent,
     CounterComponent,
     FormComponent,
-    ConfigComponent
+    HeroComponent
   ],
   imports: [
     BrowserModule,
