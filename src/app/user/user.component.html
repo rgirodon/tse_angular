@@ -1,0 +1,14 @@
+<h1>User component</h1>
+<h2>{{ firstName }} {{ lastName }}</h2>
+@if (isAdmin) {
+    <p>Administrator</p>
+}
+@else {
+    <p>Guest</p>
+}
+<ul>
+@for (skill of skills; track skill) {
+    <li>{{ skill }}</li>
+}
+</ul>
+  
