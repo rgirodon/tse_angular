@@ -9,5 +9,8 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'tse_ng';
+  
+  title: string = 'First Angular App';
+
+  message: string = "Congratulations, it works !";
 }
