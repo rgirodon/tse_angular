@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoggerService } from '../logger.service';
 
 @Component({
   selector: 'app-user',
@@ -19,4 +20,13 @@ export class UserComponent {
     "dancing",
     "singing",
   ];
+
+  constructor(private logger: LoggerService) { }
+
+  getFullName(): string {
+
+    this.logger.log("Computing full name...");
+
+    return this.firstName + " " + this.lastName;
+  }
 }

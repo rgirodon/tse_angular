@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoggerService } from '../logger.service';
 
 @Component({
   selector: 'app-counter',
@@ -13,6 +14,10 @@ export class CounterComponent {
 
   increment(): void {
 
+    this.logger.log("Incrementing value...");
+
     this.value++;
   }
+
+  constructor(private logger: LoggerService) { }
 }
