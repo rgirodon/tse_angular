@@ -1,5 +1,7 @@
 <h1>{{ title }}</h1>
 <p>{{ message }}</p>
-<app-counter></app-counter>
+<app-counter [initialValue]="0" [incrementValue]="10"></app-counter>
+<app-counter [initialValue]="100" [incrementValue]="-1"></app-counter>
+
 <app-user></app-user>
 <app-form></app-form>
