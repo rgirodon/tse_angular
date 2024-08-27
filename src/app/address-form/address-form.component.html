@@ -2,18 +2,18 @@
 
     <h2>Address</h2>
 
-    <label for="street">Street: </label>
+    <label for="street">Street<em>*</em>: </label>
     <input id="street" type="text" formControlName="street">
     
-    <label for="city">City: </label>
+    <label for="city">City<em>*</em>: </label>
     <input id="city" type="text" formControlName="city">
     
     <label for="state">State: </label>
     <input id="state" type="text" formControlName="state">
     
-    <label for="zip">Zip Code: </label>
+    <label for="zip">Zip Code<em>*</em>: </label>
     <input id="zip" type="text" formControlName="zip">
 
-    <button type="submit">Submit</button>
+    <button type="submit" [disabled]="!addressForm.valid">Submit</button>
 
 </form>

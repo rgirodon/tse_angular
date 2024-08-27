@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoggerService } from '../logger.service';
 
 @Component({
@@ -12,10 +12,10 @@ import { LoggerService } from '../logger.service';
 export class AddressFormComponent {
 
   addressForm = new FormGroup({
-    street: new FormControl(''),
-    city: new FormControl(''),
+    street: new FormControl('', [Validators.required]),
+    city: new FormControl('', [Validators.required]),
     state: new FormControl(''),
-    zip: new FormControl(''),
+    zip: new FormControl('', [Validators.required]),
   });
 
   constructor(private logger: LoggerService) {}
