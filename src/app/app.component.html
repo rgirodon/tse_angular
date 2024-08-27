@@ -1,5 +1,11 @@
 <h1>{{ title }}</h1>
 <p>{{ message }}</p>
-<app-counter></app-counter>
-<app-user></app-user>
-<app-form></app-form>
+<nav>
+    <ul>
+        <li><a routerLink="/user" routerLinkActive="active" ariaCurrentWhenActive="page">User Component</a></li>
+        <li><a routerLink="/counter" routerLinkActive="active" ariaCurrentWhenActive="page">Counter Component</a></li>
+        <li><a routerLink="/form" routerLinkActive="active" ariaCurrentWhenActive="page">Form Component</a></li>
+    </ul>
+</nav>
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>
