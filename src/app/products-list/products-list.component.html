@@ -1,0 +1,6 @@
+<h2>Products List</h2>
+<ul>
+@for (item of products; track item) {
+    <app-product-detail [product]="item"></app-product-detail>
+}
+</ul>

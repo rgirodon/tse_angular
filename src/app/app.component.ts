@@ -4,11 +4,12 @@ import { CounterComponent } from './counter/counter.component';
 import { UserComponent } from './user/user.component';
 import { FormComponent } from './form/form.component';
 import { LoggerService } from './logger.service';
+import { ProductsListComponent } from './products-list/products-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CounterComponent, UserComponent, FormComponent],
+  imports: [RouterOutlet, CounterComponent, UserComponent, FormComponent, ProductsListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
