@@ -18,10 +18,12 @@ export class AppComponent {
 
   message: string = "Congratulations, it works !";
 
+  logMessages: string[] = [];
+
   constructor(private logger: LoggerService) { }
 
   logCounterMessage(message: string) {
 
-    this.logger.log("Received message from counter child : " + message);
+    this.logMessages.push("Received message from counter child : " + message);
   }
 }

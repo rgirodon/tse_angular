@@ -1,7 +1,13 @@
 <h1>{{ title }}</h1>
 <p>{{ message }}</p>
 <app-counter name="ten_by_ten" [initialValue]="0" [incrementValue]="10" (incrementCountEvent)="logCounterMessage($event)"></app-counter>
-<app-counter name="goind_down" [initialValue]="100" [incrementValue]="-1" (incrementCountEvent)="logCounterMessage($event)"></app-counter>
+<app-counter name="going_down" [initialValue]="100" [incrementValue]="-1" (incrementCountEvent)="logCounterMessage($event)"></app-counter>
+
+<ul>
+@for (logMessage of logMessages; track logMessage) {
+    <li>{{ logMessage }}</li>
+}
+</ul>
 
 <app-user></app-user>
 <app-form></app-form>
