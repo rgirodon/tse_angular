@@ -1,6 +1,3 @@
 <li>
-    {{ product.name }} - {{ product.price }}&euro; 
-    @if (product.discount) {
-        <em> &#9888; -{{ product.discount }}% &#9888; </em>
-    }
+    <a [routerLink]="['/products', product.id]" routerLinkActive="active" ariaCurrentWhenActive="page">{{ product.name }}</a> 
 </li>
