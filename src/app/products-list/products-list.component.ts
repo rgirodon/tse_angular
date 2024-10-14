@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from '../product';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-products-list',
@@ -9,11 +10,15 @@ import { ProductDetailComponent } from '../product-detail/product-detail.compone
   templateUrl: './products-list.component.html',
   styleUrl: './products-list.component.css'
 })
-export class ProductsListComponent {
+export class ProductsListComponent implements OnInit {
 
-  products: Product[] = [
-    {name : "TV OLED Philips", price: 899.99},
-    {name : "TV OLED Samsung", price: 999.99, discount: 10.0},
-    {name : "TV OLED LG", price: 1099.99},
-  ];
+  products: Product[];
+
+  constructor(private productService: ProductService) {
+    this.products = [];
+  }
+
+  ngOnInit(): void {
+    this.products.push(...this.productService.retrieveProducts());
+  }
 }
