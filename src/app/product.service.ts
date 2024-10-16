@@ -28,7 +28,7 @@ export class ProductService {
       result =  {id: 2, name : "TV OLED Samsung", price: 999.99, discount: 10};
     }
     else if(id == 3) {
-      result =  {id: 2, name : "TV OLED Samsung", price: 999.99};
+      result =  {id: 2, name : "TV OLED LG", price: 1099.99};
     }
 
     return result;
