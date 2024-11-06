@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Product } from '../product';
+import { map, of, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-product',
@@ -18,8 +19,12 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit() {
-    let id: number = Number(this.route.snapshot.paramMap.get('id'));
-
+   this.route.paramMap.pipe(
+    map(params => {
+      return Number(params.get('id'));
+    })
+   ).subscribe(id => {
     this.product = this.productService.retrieveProduct(id);
+   });
   }
 }

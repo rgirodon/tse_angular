@@ -3,6 +3,11 @@ import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductComponent } from './product/product.component';
 
 export const routes: Routes = [
-    {path: '', component: ProductsListComponent },
-    {path: 'products/:id', component: ProductComponent }
+    {
+        path: '', 
+        component: ProductsListComponent,
+        children: [
+            {path: 'products/:id', component: ProductComponent }
+        ] 
+    }    
 ];
