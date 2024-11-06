@@ -4,10 +4,15 @@ import { ProductComponent } from './product/product.component';
 
 export const routes: Routes = [
     {
-        path: '', 
+        path: '',
+        redirectTo: 'products',
+        pathMatch: 'full'
+    },
+    { 
+        path: 'products',
         component: ProductsListComponent,
         children: [
-            {path: 'products/:id', component: ProductComponent }
+            {path: ':id', component: ProductComponent }
         ] 
     }    
 ];
