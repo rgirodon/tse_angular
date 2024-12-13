@@ -1,0 +1,12 @@
+[
+    {
+        "id" : 1,
+        "name" : "Spiderman",
+        "role" : "Climber"
+    },
+    {
+        "id" : 5,
+        "name" : "Wolverine",
+        "role" : "Scratcher"
+    }
+]

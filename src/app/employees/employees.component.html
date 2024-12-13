@@ -1,0 +1,12 @@
+@if (employees) {
+
+    <ul>
+
+    @for (employee of employees; track employee.id) {
+
+        <li>{{ employee.name }} : {{ employee.role }}</li>
+    }
+
+    </ul>
+}
+
