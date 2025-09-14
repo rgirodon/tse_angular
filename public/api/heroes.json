@@ -1,0 +1,17 @@
+[
+    {
+        "name" : "Batman",
+        "real_name" : "Bruce Wayne",
+        "city" : "Gotham"
+    },
+    {
+        "name" : "Spiderman",
+        "real_name" : "Peter Parker",
+        "city" : "NYC"
+    },
+    {
+        "name" : "Superman",
+        "real_name" : "Clarke Kent",
+        "city" : "NYC"
+    }
+]

@@ -1,0 +1,9 @@
+<ul>
+@if (heroes$ | async; as heroes) {
+
+    @for (hero of heroes; track hero.name) {
+
+        <li>Name : {{ hero.name }}</li>
+    }
+}
+</ul>

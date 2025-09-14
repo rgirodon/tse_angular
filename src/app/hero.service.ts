@@ -13,4 +13,8 @@ export class HeroService {
   getHero(): Observable<Hero> {
     return this.http.get<Hero>(`/api/hero.json`);
   }
+
+  getHeroes(): Observable<Hero[]> {
+    return this.http.get<Hero[]>(`/api/heroes.json`);
+  }
 }
