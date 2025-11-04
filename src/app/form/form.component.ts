@@ -11,14 +11,40 @@ import { FormsModule } from '@angular/forms';
 })
 export class FormComponent {
 
-  favoriteColor: string = "";
+  login: string = "";
+
+  password: string = "";
+
+  confirmPassword: string = "";
+
+  errorMessage: string = "";
+
+  validMessage: string = "";
 
   constructor(private logger: LoggerService) { }
 
-  validateChoice() {
+  validate() {
 
-    this.logger.log("Favorite color : " + this.favoriteColor);
+    this.logger.log("Login : " + this.login);
 
-    this.favoriteColor = "";
+    this.logger.log("Password : " + this.password);
+
+    this.logger.log("Confirm password : " + this.confirmPassword);
+
+    if (this.password == this.confirmPassword) {
+
+      this.errorMessage = "";
+      this.validMessage = "Form valid";
+    }
+    else {
+      this.errorMessage = "Form invalid";
+      this.validMessage = "";
+    }
+
+    this.login = "";
+
+    this.password = "";
+
+    this.confirmPassword = "";
   }
 }

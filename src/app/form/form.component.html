@@ -1,8 +1,26 @@
+@if (validMessage) {
+    <p class="valid">
+    {{ validMessage }}
+    </p>
+}
+@else if (errorMessage) {
+    <p class="error">
+    {{ errorMessage }}
+    </p>
+}
 <div>
-    <label>Favorite Color</label>
-    <input type="text" [(ngModel)]="favoriteColor">
+    <label>Login</label>
+    <input type="text" [(ngModel)]="login">
 </div>
 <div>
-    <button (click)=validateChoice()>Validate choice</button>
+    <label>Password</label>
+    <input type="password" [(ngModel)]="password">
+</div>
+<div>
+    <label>Confirm Password</label>
+    <input type="password" [(ngModel)]="confirmPassword">
+</div>
+<div>
+    <button (click)=validate()>Validate</button>
 </div>
 
