@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../product';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
 import { ProductService } from '../product.service';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-products-list',
   standalone: true,
-  imports: [ProductDetailComponent],
+  imports: [ProductDetailComponent, RouterOutlet],
   templateUrl: './products-list.component.html',
   styleUrl: './products-list.component.css'
 })
