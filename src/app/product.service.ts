@@ -23,12 +23,12 @@ export class ProductService {
     return this.products;
     */
 
-    return this.http.get<Product[]>('/api/products.json');
+    return this.http.get<Product[]>('http://localhost:8080/products');
   }
 
   retrieveProduct(id: number): Observable<Product> {
 
-    return this.http.get<Product>(`/api/product_${id}.json`);
+    return this.http.get<Product>(`http://localhost:8080/products/${id}`);
 
     /*
     let result: Product = {id: 0, name: "", price: 0};
