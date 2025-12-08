@@ -1,0 +1,13 @@
+<h2>In my shopping cart :</h2>
+
+@if (shoppingCart.length > 0) {
+    <ul>
+    @for (item of shoppingCart; track item) {
+        <li>{{ item.name }} <button (click)="removeFromCart(item)">Remove from cart</button> </li>
+    }
+    </ul>
+}
+@else {
+    <p>Nothing !</p>
+}        
+

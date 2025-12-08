@@ -5,11 +5,12 @@ import { UserComponent } from './user/user.component';
 import { FormComponent } from './form/form.component';
 import { LoggerService } from './logger.service';
 import { ProductsListComponent } from './products-list/products-list.component';
+import { CartComponent } from './cart/cart.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CounterComponent, UserComponent, FormComponent, ProductsListComponent],
+  imports: [RouterOutlet, CartComponent, ProductsListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

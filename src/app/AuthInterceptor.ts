@@ -2,7 +2,7 @@ import { HttpHandlerFn, HttpRequest } from "@angular/common/http";
 
 const API_HEADER:string = "X-API-KEY";
 
-const API_TOKEN:string = "rgirodon";
+const API_TOKEN:string = "telecom_saint_etienne!";
 
 export function authInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn) {
 
