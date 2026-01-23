@@ -1,6 +1,6 @@
 <li>
-    {{ productToDisplay.name }} - {{ productToDisplay.price }}&euro; 
-    @if (productToDisplay.discount) {
-        <em> &#9888; -{{ productToDisplay.discount }}% &#9888; </em>
+    {{ productToDisplay().name }} - {{ productToDisplay().price }}&euro; 
+    @if (productToDisplay().discount) {
+        <em> &#9888; -{{ productToDisplay().discount }}% &#9888; </em>
     }
 </li>
