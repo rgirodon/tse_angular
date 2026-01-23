@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal, WritableSignal } from '@angular/core';
 import { LoggerService } from '../logger.service';
 import { FormsModule } from '@angular/forms';
 
@@ -11,14 +11,14 @@ import { FormsModule } from '@angular/forms';
 })
 export class FormComponent {
 
-  favoriteColor: string = "";
+  favoriteColor: WritableSignal<string> = signal("");
 
   constructor(private logger: LoggerService) { }
 
   validateChoice() {
 
-    this.logger.log("Favorite color : " + this.favoriteColor);
+    this.logger.log("Favorite color : " + this.favoriteColor());
 
-    this.favoriteColor = "";
+    this.favoriteColor.set("");
   }
 }
