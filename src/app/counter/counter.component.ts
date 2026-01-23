@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { LoggerService } from '../logger.service';
 
 @Component({
@@ -12,6 +12,8 @@ export class CounterComponent {
 
   value: number = 0;
 
+  logger: LoggerService = inject(LoggerService);
+
   increment(): void {
 
     this.logger.log("Incrementing value...");
@@ -19,5 +21,5 @@ export class CounterComponent {
     this.value++;
   }
 
-  constructor(private logger: LoggerService) { }
+  constructor() { }
 }
