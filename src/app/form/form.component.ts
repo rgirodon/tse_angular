@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { LoggerService } from '../logger.service';
 import { FormsModule } from '@angular/forms';
 
@@ -13,7 +13,9 @@ export class FormComponent {
 
   favoriteColor: string = "";
 
-  constructor(private logger: LoggerService) { }
+  logger: LoggerService = inject(LoggerService);
+
+  constructor() { }
 
   validateChoice() {
 
