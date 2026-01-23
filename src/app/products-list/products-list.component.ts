@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal, WritableSignal } from '@angular/core';
 import { Product } from '../product';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
 
@@ -11,9 +11,10 @@ import { ProductDetailComponent } from '../product-detail/product-detail.compone
 })
 export class ProductsListComponent {
 
-  products: Product[] = [
+  products: WritableSignal<Product[]> = signal([
     {name : "TV OLED Philips", price: 899.99},
     {name : "TV OLED Samsung", price: 999.99, discount: 10.0},
     {name : "TV OLED LG", price: 1099.99},
-  ];
+    {name : "TV OLED Panasonic", price: 999.99, discount: 5.0}
+  ]);
 }
