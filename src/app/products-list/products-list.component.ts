@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Signal, signal } from '@angular/core';
 import { Product } from '../product';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
 import { ProductService } from '../product.service';
@@ -12,13 +12,12 @@ import { ProductService } from '../product.service';
 })
 export class ProductsListComponent implements OnInit {
 
-  products: Product[];
+  products: Signal<Product[]> = signal([]);
 
   constructor(private productService: ProductService) {
-    this.products = [];
   }
 
   ngOnInit(): void {
-    this.products.push(...this.productService.retrieveProducts());
+    this.products().push(...this.productService.retrieveProducts());
   }
 }

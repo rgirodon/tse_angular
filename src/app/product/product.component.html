@@ -1,8 +1,8 @@
 <h2>Product</h2>
 <p>
-{{ product.name }} - {{ product.price }}&euro; 
-@if (product.discount) {
-    <em> &#9888; -{{ product.discount }}% &#9888; </em>
+{{ product().name }} - {{ product().price }}&euro; 
+@if (product().discount) {
+    <em> &#9888; -{{ product().discount }}% &#9888; </em>
 } 
 </p>
 <p>
