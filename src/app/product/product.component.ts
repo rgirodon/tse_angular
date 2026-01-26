@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Product } from '../product';
@@ -12,9 +12,13 @@ import { Product } from '../product';
 })
 export class ProductComponent implements OnInit {
 
-  product: Product = {id: 0, name: "", price: 0};
+  product: WritableSignal<Product> = signal({id: 0, name: "", price: 0});
 
-  constructor(private route: ActivatedRoute, private productService: ProductService) {
+  private productService: ProductService = inject(ProductService);
+
+  private route = inject(ActivatedRoute);
+
+  constructor() {
   }
 
   ngOnInit() {
@@ -22,7 +26,7 @@ export class ProductComponent implements OnInit {
 
     this.productService.retrieveProduct(id).subscribe((product: Product) => {
 
-      this.product = product;
+      this.product.set(product);
     });
   }
 }
