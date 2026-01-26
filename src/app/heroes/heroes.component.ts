@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { HeroService } from '../hero.service';
 import { Hero } from '../hero';
 import { Observable } from 'rxjs';
@@ -13,10 +13,10 @@ import { AsyncPipe } from '@angular/common';
 })
 export class HeroesComponent implements OnInit {
 
+  private heroService: HeroService = inject(HeroService);
+
   heroes$!: Observable<Hero[]>;
   
-  constructor(private heroService: HeroService) { }
-
   ngOnInit(): void {
     this.heroes$ = this.heroService.getHeroes();
   }

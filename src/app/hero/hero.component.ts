@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core';
 import { HeroService } from '../hero.service';
 import { Observable } from 'rxjs';
 import { Hero } from '../hero';
@@ -13,11 +13,19 @@ import { AsyncPipe } from '@angular/common';
 })
 export class HeroComponent implements OnInit {
 
-  hero$!: Observable<Hero>;
+  private heroService: HeroService = inject(HeroService);
 
-  constructor(private heroService: HeroService) { }
+  hero: WritableSignal<Hero> = signal<Hero>({
+    name: '',
+    real_name: '',
+    city: '',
+  });
 
   ngOnInit(): void {
-    this.hero$ = this.heroService.getHero();
+    this.heroService.getHero().subscribe(
+      (hero) => {
+        this.hero.set(hero);
+      }
+    );
   }
 }
