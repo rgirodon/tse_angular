@@ -9,13 +9,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css'
 })
-export class ProductDetailComponent implements OnInit {
+export class ProductDetailComponent {
 
   product: InputSignal<Product> = input({ id:0, name: "", price: 0});
-
-  productToDisplay: Product = { id:0, name: "", price: 0};
-
-  ngOnInit(): void {
-    this.productToDisplay = this.product();
-  }
 }

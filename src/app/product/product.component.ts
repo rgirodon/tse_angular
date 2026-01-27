@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, WritableSignal } from '@angular/core';
+import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Product } from '../product';
@@ -14,8 +14,9 @@ export class ProductComponent implements OnInit {
 
   product: WritableSignal<Product> = signal({id: 0, name: "", price: 0});
 
-  constructor(private route: ActivatedRoute, private productService: ProductService) {
-  }
+  private route: ActivatedRoute = inject(ActivatedRoute);
+
+  private productService: ProductService = inject(ProductService);
 
   ngOnInit() {
     let id: number = Number(this.route.snapshot.paramMap.get('id'));
